@@ -1,0 +1,14 @@
+<!-- Banner -->
+    <section class="banner" style="background-image:url('{{ file_url(content.field_top_banner_image['#items'].entity.uri.value) }}');">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 banner-content text-center">
+              <h1 class="animated fadeInUpBig">{{ title }}</h1>
+              <ul class="animated fadeInRightBig">
+                {{ render_block('breadcrumbs') }}
+              </ul>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- Banner End --> 

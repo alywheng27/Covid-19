@@ -1,0 +1,27 @@
+
+        <!-- About-us -->
+    <section id="about" class="company-overview">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 col-lg-9 mx-auto text-center title-section wow fadeInUp" data-wow-delay="0.3s">
+            <h2 class="title wow fadeInRight">{{ content.field_company_.0 }}</h2>
+            <p class="wow fadeInLeft">{{ content.field_company_header_desc.0 }}</p>
+          </div> 
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-lg-5 wow fadeInLeft" data-wow-delay="0.6s">
+            <div class="hovereffect">
+              <img src="{{ file_url(content.field_company_image['#items'].entity.uri.value) }}" class="img-fluid" alt="about-us image" title="about-us image">
+            </div>  
+          </div>
+          <div class="col-md-12 col-lg-7 wow fadeInRight" data-wow-delay="0.9s">
+            <h3>{{ content.field_company_body_title.0 }}</h3>
+            <p>{{ content.field_company_desc.0 }}</p>
+            <div class="row co-content">
+              {{ content.field_company_list }}              
+            </div>
+          </div>
+        </div>  
+      </div>
+    </section>
+    <!-- about us end -->

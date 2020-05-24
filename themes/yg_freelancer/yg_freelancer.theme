@@ -1,0 +1,101 @@
+<?php
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function yg_freelancer_preprocess_html(&$variables) {
+  $node=\Drupal::routeMatch()->getParameter('node');
+  if($node){
+     if ($node == "slider") {
+      $variables['head_title']['title'] = "Page Not Found";
+    }   
+  }
+  foreach ($variables['user']->getRoles() as $role) {
+     $variables['attributes']['class'][] = 'role-' . $role;
+   }
+  
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function yg_freelancer_preprocess_page(&$variables) {
+  // Bannner Image Settings
+   $fid = theme_get_setting('banner_image');
+   if(is_array($fid)){
+    $query = \Drupal::database()->select('file_managed', 'm');
+      $query->fields('m', ['filename','uri']);
+      $query->condition('fid',$fid[0]);
+      $results = $query->execute()->fetchAll();
+    foreach($results as $data){
+      $uri=$data->uri;
+    }
+    $variables['banner_image']=file_create_url($uri);
+   }
+   else{
+    $path=base_path().$fid;
+    $variables['banner_image']=$path;
+   }
+}
+
+/**
+ * Implements hook_form_system_theme_settings_alter().
+ */
+function yg_freelancer_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state, $form_id = NULL) {
+ // Banner Section Start
+  $form['drushup_settings']['banner'] = array(
+    '#type' => 'details',
+    '#title' => 'Banner Image Settings For User and Not Found Pages',
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+
+   $fid = theme_get_setting('banner_image');
+   if(is_array($fid)){
+      $form['drushup_settings']['banner']['banner_image'] = array(
+        '#type'            => 'managed_file',
+        '#title'           => t('Banner image'),
+        '#default_value'   => theme_get_setting('banner_image'),
+        '#description'     => t("The Banner images for users."),
+        '#upload_location' => 'public://'
+      );
+    }
+    else{
+       $form['drushup_settings']['banner']['banner_image'] = array(
+        '#type'            => 'managed_file',
+        '#title'           => t('Banner image'),
+        '#description'     => t("The Banner images for users."),
+        '#upload_location' => 'public://'
+      );
+    }
+ 
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function yg_freelancer_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  // Get Request Object.
+  $request = \Drupal::request();
+  // If there is HTTP Exception..
+  if ($exception = $request->attributes->get('exception')) {
+    // Get the status code.
+    $status_code = $exception->getStatusCode();
+    if (in_array($status_code, array(401, 403, 404))) {
+      $suggestions[] = 'page__' . $status_code;
+    }
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function yg_freelancer_theme(&$existing, $type, $theme, $path) {
+  $hooks = array();
+  $hooks['user_login_form'] = array(
+      'render element' => 'form',
+      'template' => 'user-login-form',
+  );
+  return $hooks;
+}
+?>

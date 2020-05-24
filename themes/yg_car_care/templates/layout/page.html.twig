@@ -1,0 +1,146 @@
+ <!-- Topbar -->
+    <section id="topbar" class="main-header">
+        <div class="container">
+            <div class="row">
+              <div class="col-lg-6 col-md-4 col-sm-12 col-xs-12 wow fadeInUp" data-wow-delay="0.2s">
+                {{ page.header }}
+              </div>
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6">
+                  <div class="row topbar-info">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 opening-hours">
+                      <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        <div class="opening-hours-caption">
+                          <h3>{{opening_hours_title}}</h3>
+                          <span>{{opening_hours}}</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 helpline">
+                      <i class="fa fa-phone" aria-hidden="true"></i>
+                        <div class="helpline-caption">
+                          <h3>{{helpline_title}}</h3>
+                          <span>{{helpline}}</span>
+                        </div> 
+                    </div>
+                  </div>  
+                </div>
+            </div>
+        </div> <!-- end container -->
+    </section> 
+  <!-- end topbar -->
+
+<!-- Header -->
+<header>
+  <nav id="menu" class="navbar navbar-expand-lg">
+    <div class="container">
+    {{ page.header }}
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarYGMenu" aria-controls="navbarYGMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="fa fa-bars"></span></button>
+          <div class="collapse navbar-collapse" id="navbarYGMenu">
+            {{ page.primary_menu }}
+        </div>
+      </div>
+    </nav>
+</header>
+<!-- Header End --> 
+ <!-- Banner -->
+ {% set url = url('<current>') %}
+{% if 'comment' in url|render|render %}
+    <section class="banner" style="background-image:url({{ bg_image_url }});">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 banner-content text-center">
+              <h1 class="animated fadeInUpBig">{{ page['#title'] }}</h1>
+              <!-- <ul class="animated fadeInRightBig">
+                {{ render_block('breadcrumbs') }}
+              </ul> -->
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- Banner End --> 
+{% endif %}   
+ {% set url = url('<current>') %}
+{% if 'user' in url|render|render %}
+    <section class="banner" style="background-image:url({{ bg_image_url }});">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 banner-content text-center">
+              <h1 class="animated fadeInUpBig">{{ page['#title'] }}</h1>
+              <!-- <ul class="animated fadeInRightBig">
+                {{ render_block('breadcrumbs') }}
+              </ul> -->
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- Banner End --> 
+{% endif %} 
+
+ <section {{ content_attributes.addClass(content_classes) }}>
+    {# Content #}
+    {% block content %}
+      <a id="main-content"></a>
+      {{ page.content }}
+    {% endblock %}
+  </section>
+
+
+    <!-- footer start -->
+    <footer class="banner" style="background-image:url({{footer_bg_url}});">
+        <div class="container">
+            <div class="row footer-top">
+                <div class="col-xl-4 col-lg-3 col-md-6 wow fadeInLeft" data-wow-delay="0.3s">          
+                    {{ page.footer_col_first }}
+                    <div class="pd">
+                      <ul class="social">
+                        {% if facebook %}
+                        <li><a href="{{facebook}}"><i class="fa fa-facebook"></i></a></li>
+                        {% endif %}
+
+                        {% if twitter %}
+                        <li><a href="{{twitter}}"><i class="fa fa-twitter"></i></a></li>
+                        {% endif %}
+
+                        {% if instagram %}
+                        <li><a href="{{instagram}}"><i class="fa fa-instagram"></i></a></li>
+                        {% endif %}
+
+                        {% if youtube %}
+                        <li><a href="{{youtube}}"><i class="fa fa-youtube"></i></a></li>
+                        {% endif %}
+
+                      </ul>  
+                    </div>  
+                </div>
+                 <div class="col-xl-2 col-lg-2 col-md-6 wow fadeInDown" data-wow-delay="0.9s">
+                    <div class="pd">
+                    {{ page.footer_col_second }}
+                    </div>
+                </div>  
+                <div class="col-xl-3 col-lg-4 col-md-6 contact wow fadeInRight" data-wow-delay="0.12s">
+                    <h5>{{contact}}</h5>
+                    <p><i class="fa fa-map-marker"></i><span>{{contact_desc}}</span></p>
+                    <a href="mailto:{{email}}"><i class="fa fa-envelope"></i>{{email}}</a>
+                    <a href="tel:{{phone}}"><i class="fa fa-phone"></i>{{phone}}</a>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 pd wow fadeInUp" data-wow-delay="0.6s">
+                 {{ page.footer_col_fourth }}
+                </div> 
+            </div>    
+        </div>
+        <div class="copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 mx-auto text-center copyright wow fadeInUp" data-wow-delay="0.5s"> 
+              <p> &copy;2018. <a href="#"> YG Car Care</a>.&nbsp;All Rights Reserved.<br></p>
+              <p class="our-info"> Theme By<a href="https://www.drupaldevelopersstudio.com/" target="_blank"> Drupal Developers Studio</a>, A Division of <a href="https://www.youngglobes.com/" target="_blank"> Young Globes</a></p>   
+          </div>  
+            </div>
+          </div>
+      </div>
+    </footer>
+    <!-- footer end -->
+
+  <!-- back to top button -->
+  <button class="scroll-top scroll-to-target" data-target="html">
+      <span class="fa fa-long-arrow-up"></span>
+  </button>

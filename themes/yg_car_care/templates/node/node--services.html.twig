@@ -1,0 +1,22 @@
+ {{ content.field_top_banner.0 }}
+
+ <section id="blog" class="blog-details service-details">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-lg-10 col-md-10 mx-auto">
+    				<div class="blog-box">
+    					<div class="wow fadeInUp" data-wow-delay="0.3s">
+    						<img src="{{ file_url(content.field_services_image['#items'].entity.uri.value) }}" class="img-fluid" title="service-image" 
+                  alt="service-image">
+    					</div>
+      					<div class="blog-caption wow fadeInDown" data-wow-delay="0.5s">
+      						<h3>{{ label }}</h3>
+    							{{ content.body.0 }}
+      					</div>
+
+    				</div>
+    			</div>
+
+    		</div>
+    	</div>
+    </section> 

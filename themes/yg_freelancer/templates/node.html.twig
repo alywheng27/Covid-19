@@ -1,0 +1,25 @@
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+{{ attach_library('classy/node') }}
+<article{{ attributes.addClass(classes) }}>
+  {% if node.id  == 1 %}
+    <div {{ content_attributes.addClass('node__content') }}>
+      {{ content }}
+    </div>
+  {% else %}
+    <div class="container">
+      <div {{ content_attributes.addClass('node__content') }}>
+        {{ content }}
+      </div>
+    </div>
+  {% endif %}
+
+</article>

@@ -1,0 +1,18 @@
+  <!-- video section -->
+     <section id="video" class="banner" style="background-image:url({{ file_url(content.field_video_bg_image['#items'].entity.uri.value) }}
+);">
+       <div class="container">
+         <div class="row">
+             <div class="col-md-9 col-lg-9 mx-auto text-center title-section wow fadeInUp" data-wow-delay="0.3s">
+              <h2 class="title">{{ content.field_video_title.0 }}</h2>
+              <p>{{ content.field_video_desc.0 }}</p>
+            </div> 
+           <div class="col-lg-8 mx-auto campus-tour-caption">
+             <div class="play-icon">
+             <a class="popup-youtube" href="{{ content.field_video_url.0 }}"><i class="fa fa-play"></i></a>
+             </div>
+           </div>
+         </div>
+       </div>
+     </section>
+     <!-- video section -->

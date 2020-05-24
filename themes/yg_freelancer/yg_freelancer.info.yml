@@ -1,0 +1,19 @@
+name: 'YG Freelancer'
+description: 'YG Freelancer is a Responsive Drupal 8 theme.'
+# core: 8.x
+type: theme
+base theme: classy
+screenshot: yg_freelancer.png
+
+regions:
+  header: Header
+  content: Content
+  
+libraries:
+  - yg_freelancer/global-styling
+
+# Information added by Drupal.org packaging script on 2018-12-29
+version: '8.x-1.0'
+core: '8.x'
+project: 'yg_freelancer'
+datestamp: 1546074785

@@ -1,0 +1,24 @@
+name: YG Car Care
+type: theme
+base theme: classy
+description: 'A flexible, recolorable theme with many regions and a responsive, mobile-first layout.'
+# core: 8.x
+
+regions:
+  header: Logo
+  primary_menu: Primary menu
+  slider: Slider
+  content: Content
+  footer_col_first: Footer column first
+  footer_col_second: Footer column Second
+  footer_col_fourth: Footer column fourth
+
+
+libraries:
+  - yg_car_care/global-styling  
+
+# Information added by Drupal.org packaging script on 2019-01-05
+version: '8.x-1.0'
+core: '8.x'
+project: 'yg_car_care'
+datestamp: 1546697888

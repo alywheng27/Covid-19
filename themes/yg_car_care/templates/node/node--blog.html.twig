@@ -1,0 +1,35 @@
+{{ content.field_top_banner_section.0 }}
+{% set postdate = node.getCreatedTime|format_date('post_date') %}
+    <section id="blog" class="blog-details">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-lg-10 mx-auto">
+    				<div class="blog-box">
+    					<div class="hovereffect blogimage wow fadeInUp" data-wow-delay="0.3s">
+    						<img src="{{ file_url(content.field_blog_image['#items'].entity.uri.value) }}" class="img-fluid" title="blog-image" 
+                alt="blog-image">
+                <div class="tags"><span><i class="fa fa-calendar-o"></i>{{postdate}}</span></div>
+    					</div>
+    					<div class="blog-caption wow fadeInDown" data-wow-delay="0.5s">
+    						<h3>{{label}}</h3>
+    						<ul class="blog_grid">
+								<li><span><i class="fa fa-user-circle-o"></i>{{ user.displayname }}</span></li>
+                <li><span><i class="fa fa-calendar-o"></i>{{postdate}}</span></li>
+							</ul>
+							{{ content.body.0 }}
+    					</div>
+              <div class="col-md-12 wow fadeInLeft" data-wow-delay="0.7s">
+                <div class="comment-row">
+                  <h3>Comments</h3>
+                  {{ content.field_blog_comments.0 }}
+                </div> 
+              </div> 
+            </div> 
+              
+
+    				</div>
+    			</div>
+	
+    		</div>
+    	</div>
+    </section> 

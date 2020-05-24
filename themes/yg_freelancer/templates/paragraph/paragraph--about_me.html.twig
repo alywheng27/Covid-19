@@ -1,0 +1,39 @@
+<div id="fh5co-about" class="animate-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>{{content.field_title.0}}</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<ul class="info">
+						{{content.field_information}}
+					</ul>
+				</div>
+				<div class="col-md-8">
+					{{content.field_content.0}}
+					<p>
+						<ul class="fh5co-social-icons">
+							{% if content.field_twitter_link.0 %}
+								<li><a href="{{content.field_twitter_link.0['#url']}}">
+								<i class="icon-twitter2"></i></a></li>
+							{% endif %}
+							{% if content.field_facebook_link.0 %}
+								<li><a href="{{content.field_facebook_link.0['#url']}}">
+								<i class="icon-facebook3"></i></a></li>
+							{% endif %}
+							{% if content.field_linkedin_link.0 %}
+								<li><a href="{{content.field_linkedin_link.0['#url']}}">
+								<i class="icon-linkedin2"></i></a></li>
+							{% endif %}
+							{% if content.field_dribbble_link.0 %}
+								<li><a href="{{content.field_dribbble_link.0['#url']}}">
+								<i class="icon-dribbble2"></i></a></li>
+							{% endif %}
+						</ul>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>

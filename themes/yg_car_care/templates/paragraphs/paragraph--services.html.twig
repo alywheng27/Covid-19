@@ -1,0 +1,16 @@
+ <!-- Service  -->
+    <section id="blog" class="services">
+      <div class="container">
+        <div class="row wow fadeInUp" data-wow-delay="0.3s">
+          <div class="col-md-9 col-lg-9 mx-auto text-center title-section">
+            <h2 class="title">{{ content.field_services_title.0 }}</h2>
+            <p>{{ content.field_services_desc.0 }}</p>
+          </div>
+        </div>  
+         {{ content.field_view_list.0 }}
+        <div class="row">  
+          <a href="{{ content.field_services_btn[0]['#url']|render }}" class="custom-btn text-center">{{ content.field_services_btn[0]['#title']|render }}</a>
+        </div>  
+        </div>
+    </section>
+    <!-- Service section end  -->

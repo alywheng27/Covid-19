@@ -1,0 +1,64 @@
+.cols-4 {
+  width: 100% !important;
+}
+
+.cols-4>tbody>tr:nth-of-type(odd){
+  background-color:#f9f9f9;
+}
+
+.flag-image{
+  padding: 5px;
+}
+
+.total-block-css, .recovered-block-css, .deaths-block-css{
+  padding-left: 5px;
+}
+
+.view-field-death-table-column{
+  padding-left: 5px;
+}
+
+.path-frontpage .region-topwidget-first h2 {
+  font-size: 30px;
+  color: #078D92;
+}
+
+.path-frontpage .region-topwidget-first div {
+  margin-top: 25px;
+  font-size: 40px;
+}
+
+.path-frontpage .region-topwidget-first .fontawesome-icon {
+  color: #078D92;
+  font-size: 15px;
+}
+
+.path-frontpage .region-topwidget-second h2 {
+  font-size: 30px;
+  color: #078D92;
+}
+
+.path-frontpage .region-topwidget-second div {
+  margin-top: 25px;
+  font-size: 40px;
+}
+
+.path-frontpage .region-topwidget-second .fontawesome-icon {
+  color: #078D92;
+  font-size: 15px;
+}
+
+.path-frontpage .region-topwidget-third h2 {
+  font-size: 30px;
+  color: #078D92;
+}
+
+.path-frontpage .region-topwidget-third div {
+  margin-top: 25px;
+  font-size: 40px;
+}
+
+.path-frontpage .region-topwidget-third .fontawesome-icon {
+  color: #078D92;
+  font-size: 15px;
+}
